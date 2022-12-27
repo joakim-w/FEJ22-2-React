@@ -1,0 +1,17 @@
+
+.Post .card {
+  border: 1px solid #333;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.Post button {
+  background-color: rgb(215, 2, 2);
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.dark {
+  background-color: #333;
+  color: #fff;
+}
