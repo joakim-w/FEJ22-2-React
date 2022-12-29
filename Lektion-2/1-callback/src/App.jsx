@@ -10,12 +10,26 @@ const App = () => {
     { id: '12wefdsasds', name: 'Hans' },
   ])
 
+  const addCustomer = (customerName) => {
+    setCustomers(prevCustomers => {
+      return [...prevCustomers, { id: crypto.randomUUID(), name: customerName }]
+    })
+  }
+
+  const removeCustomer = (id) => {
+    setCustomers(prevCustomers => {
+      return prevCustomers.filter(customer => customer.id !== id)
+    })
+  }
+  
+  
+
   return (
     <div>
       <Header title="Customer List" />
       <div className='container mt-5'>
-        <AddCustomerForm />
-        <CustomerList customers={customers} />
+        <AddCustomerForm addCustomerCallback={addCustomer} />
+        <CustomerList customers={customers} removeCustomer={removeCustomer} />
       </div>
     </div>
   )

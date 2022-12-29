@@ -1,7 +1,7 @@
 
 import CustomerRow from './CustomerRow'
 
-const CustomerList = ({ customers }) => {
+const CustomerList = ({ customers, removeCustomer }) => {
 
 
   if(!customers.length) return (
@@ -21,7 +21,7 @@ const CustomerList = ({ customers }) => {
       </thead>
       <tbody>
         {
-          customers && customers.map(customer => <CustomerRow key={customer.id} customer={customer} />)
+          customers && customers.map(customer => <CustomerRow key={customer.id} customer={customer} removeCustomer={removeCustomer} />)
         }
 
         {/* {
