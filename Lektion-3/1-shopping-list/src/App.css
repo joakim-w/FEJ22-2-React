@@ -117,3 +117,20 @@
   text-align: center;
   margin-bottom: .5rem;
 }
+
+.ChangeItem {
+  flex: 3;
+}
+.ChangeItem input {
+  font-family: 'Montserrat', sans-serif;
+  border: 0;
+  outline: 0;
+  font-size: 1rem;
+  width: 80%;
+}
+.btn-check {
+  font-size: 1rem;
+}
+.btn-check:hover {
+  color: #2e8d6c;
+}
