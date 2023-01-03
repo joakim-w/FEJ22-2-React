@@ -2,14 +2,21 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import AddItemForm from './components/AddItemForm'
 import Header from './components/Header'
+import Modal from './components/Modal'
 import ShoppingList from './components/ShoppingList'
 
 const App = () => {
+  
+  // const storedItems = JSON.parse(localStorage.getItem('itemList'))
+
+  // const [items, setItems] = useState(storedItems ?? [])
 
   const [items, setItems] = useState([])
+  const [showModal, setShowModal] = useState(false)
 
   const clearList = () => {
     setItems([])
+    setShowModal(false)
   }
 
   const addItem = (formData) => {
@@ -73,23 +80,31 @@ const App = () => {
     // localStorage.setItem('itemList', JSON.stringify(items))
   }
 
+
   
   useEffect(() => {
     const storedItems = JSON.parse(localStorage.getItem('itemList'))
-    if(storedItems) {
+    console.log(storedItems)
+    if(storedItems && storedItems.length) {
       setItems(storedItems)
     }
   }, [])
+
   
   useEffect(() => {
-    localStorage.setItem('itemList', JSON.stringify(items))
+    // if(items.length) {
+      localStorage.setItem('itemList', JSON.stringify(items))
+    // }else {
+    //   localStorage.removeItem('itemList')
+    // }
   }, [items])
 
   return (
     <div className='App container'>
-      <Header title="Shopping List" />
+      <Header title="Shopping List" setShowModal={setShowModal} />
       <ShoppingList items={items} changeProduct={changeProduct} decrement={decrement} increment={increment} removeItem={removeItem} toggleComplete={toggleComplete} />
       <AddItemForm addItem={addItem} />
+      { showModal && <Modal clearList={clearList} setShowModal={setShowModal} />}
     </div>
   )
 }

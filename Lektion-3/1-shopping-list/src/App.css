@@ -134,3 +134,51 @@
 .btn-check:hover {
   color: #2e8d6c;
 }
+
+.modal-bg {
+  position: fixed;
+  inset: 0;
+  background-color: #0000005a;
+}
+
+.modal {
+  background-color: #fff;
+  width: 50%;
+  max-width: 500px;
+  margin: 5rem auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 5px #00000035;
+}
+
+.modal h2 {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #acacac;
+}
+
+.modal p {
+  margin-block: 1rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.y-btn,
+.n-btn {
+  background-color: #666;
+  color: #fff;
+  border: 0;
+  padding: .4em 1em;
+  cursor: pointer;
+  border-radius: 100vh;
+}
+
+.y-btn {
+  background-color: #2e8d6c;
+}
+
+.n-btn:hover {
+  background-color: #4f2121;
+}
