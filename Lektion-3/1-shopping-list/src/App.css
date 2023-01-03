@@ -1,0 +1,32 @@
+.container {
+  width: 80%;
+  margin: 2rem auto;
+  max-width: 720px;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 5px #00000035;
+}
+
+
+.Header {
+  text-align: center;
+  border-bottom: 1px solid #e2e2e2;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.clear-btn {
+  background-color: #8d2c2c;
+  color: #fff;
+  border: 0;
+  padding: .3em .8em;
+  border-radius: 100vh;
+  position: absolute;
+  right: 1rem;
+}
+
+.ShoppingList {
+  height: 70vh;
+  overflow: auto;
+}

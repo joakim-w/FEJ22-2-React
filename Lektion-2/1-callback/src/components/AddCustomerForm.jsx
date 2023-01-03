@@ -15,7 +15,7 @@ const AddCustomerForm = ({ addCustomerCallback }) => {
     // addCustomerCallback(customerName)
     // setCustomerName('')
 
-    console.log(customerNameInput.current)
+    // console.log(customerNameInput.current)
 
     addCustomerCallback(customerNameInput.current.value)
 
