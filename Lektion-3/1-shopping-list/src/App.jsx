@@ -17,7 +17,7 @@ const App = () => {
       id: crypto.randomUUID(),
       product: 'Bread',
       quantity: 1,
-      completed: false
+      completed: true
     },
     {
       id: crypto.randomUUID(),
@@ -30,7 +30,7 @@ const App = () => {
   return (
     <div className='App container'>
       <Header title="Shopping List" />
-      <ShoppingList />
+      <ShoppingList items={items} />
       <AddItemForm />
     </div>
   )
