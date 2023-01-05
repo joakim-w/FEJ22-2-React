@@ -8,7 +8,6 @@ import ShoppingList from './components/ShoppingList'
 const App = () => {
   
   // const storedItems = JSON.parse(localStorage.getItem('itemList'))
-
   // const [items, setItems] = useState(storedItems ?? [])
 
   const [items, setItems] = useState([])
@@ -84,7 +83,6 @@ const App = () => {
   
   useEffect(() => {
     const storedItems = JSON.parse(localStorage.getItem('itemList'))
-    console.log(storedItems)
     if(storedItems && storedItems.length) {
       setItems(storedItems)
     }
