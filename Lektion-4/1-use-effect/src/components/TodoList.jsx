@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from 'react'
 
-// const getTodos = async (url) => {
-//   const res = await fetch(url)
-//   const data = await res.json()
-//   console.log(data)
-//   return data
-// }
+const getTodos = async (url) => {
+  const res = await fetch(url)
+  const data = await res.json()
+  console.log(data)
+  return data
+}
 
 const TodoList = () => {
 
@@ -14,6 +14,11 @@ const TodoList = () => {
   const [url, setUrl] = useState('https://jsonplaceholder.typicode.com/todos?userId=1&_limit=10')
 
   const [test, setTest] = useState({name: 'joakim'})
+
+  // useEffect(() => {
+  //   getTodos(url).then(setTodos)
+  // }, [url])
+
 
   // const getTodos = async () => {
   //   const res = await fetch(url)
@@ -36,30 +41,30 @@ const TodoList = () => {
   // }, [url])
 
   // useEffect(() => {
-    // const getTodos = async () => {
-    //   const res = await fetch(url)
-    //   const data = await res.json()
-    //   console.log(data)
-    //   setTodos(data)
-    // }
+  //   const getTodos = async () => {
+  //     const res = await fetch(url)
+  //     const data = await res.json()
+  //     console.log(data)
+  //     setTodos(data)
+  //   }
 
-    // getTodos(url).then(setTodos)
+  //   getTodos()
   // }, [url])
 
 
-  const getTodos = useCallback(async () => {
+  // const getTodos = useCallback(async () => {
 
-    const res = await fetch(url)
-    const data = await res.json()
-    console.log(data)
-    setTodos(data)
+  //   const res = await fetch(url)
+  //   const data = await res.json()
+  //   console.log(data)
+  //   setTodos(data)
 
-  }, [url])
+  // }, [url])
 
 
-  useEffect(()=> {
-    getTodos()
-  }, [getTodos])
+  // useEffect(()=> {
+  //   getTodos()
+  // }, [getTodos])
 
 
   return (
