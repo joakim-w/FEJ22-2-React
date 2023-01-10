@@ -7,6 +7,7 @@ const Root = () => {
       <Navbar />
       <div className="container">
         <Outlet />
+        {/* Renderar ut alla children till den här komponenten */}
       </div>
     </>
   )
