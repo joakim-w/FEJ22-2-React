@@ -5,6 +5,8 @@ import Navbar from './components/Navbar'
 import About from './Views/About'
 import Home from './Views/Home'
 import NotFound from './Views/NotFound'
+import ProductDetails from './Views/ProductDetails'
+import Shop from './Views/Shop'
 
 const App = () => {
   return (
@@ -15,8 +17,8 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='about' element={<About />} />
-          {/* Shop */}
-          {/* Details */}
+          <Route path='shop' element={<Shop />} />
+          <Route path='shop/:id' element={<ProductDetails />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

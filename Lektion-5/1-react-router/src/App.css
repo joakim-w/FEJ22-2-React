@@ -40,3 +40,61 @@ body {
 .active {
   text-decoration: underline;
 }
+
+.shop {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.product-item {
+  border: 1px solid #999;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #333;
+  text-decoration: none;
+}
+.image-container {
+  width: 100%;
+  height: 200px;
+}
+
+.product-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-title {
+  text-align: center;
+  margin: 3rem;
+}
+
+.product-desc {
+  display: flex;
+  gap: 2rem;
+}
+
+.product-img {
+  flex: 1;
+}
+.product-img img {
+  width: 100%;
+}
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-price {
+  color: red;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-left: auto;
+}
