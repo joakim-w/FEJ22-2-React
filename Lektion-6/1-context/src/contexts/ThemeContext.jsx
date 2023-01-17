@@ -17,7 +17,7 @@ const ThemeContextProvider = ({children}) => {
     ui: '#fff'
   }
 
-  const themeUI = isDarkTheme ? dark : light
+  const theme = isDarkTheme ? dark : light
 
   const toggleTheme = () => {
     setIsDarkTheme(theme => !theme)
@@ -25,7 +25,7 @@ const ThemeContextProvider = ({children}) => {
 
   const value = {
     isDarkTheme,
-    themeUI,
+    theme,
     toggleTheme
   }
 
