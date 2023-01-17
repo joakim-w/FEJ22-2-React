@@ -3,11 +3,13 @@ import { usePostsContext } from '../hooks/usePostsContext'
 import { useNavigate, Navigate } from 'react-router-dom'
 import { useThemeContext } from '../hooks/useThemeContext'
 import { useAuth } from '../hooks/useAuth'
+import actiontypes from '../reducers/actiontypes'
 
 const CreatePost = () => {
 
   const navigate = useNavigate()
-  const { addPost } = usePostsContext()
+  // const { addPost } = usePostsContext()
+  const { dispatch } = usePostsContext()
   const { theme } = useThemeContext()
   const { isAuthenticated } = useAuth()
 
@@ -17,7 +19,11 @@ const CreatePost = () => {
   const handleSubmit = e => {
     e.preventDefault()
 
-    addPost(title, body)
+    // addPost(title, body)
+    dispatch({
+      type: actiontypes().posts.addPost,
+      payload: {title, body}
+    })
     navigate("/")
   }
 

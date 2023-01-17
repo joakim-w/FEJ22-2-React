@@ -12,7 +12,7 @@ export const AuthContext = createContext()
 
 const AuthContextProvider = ({children}) => {
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState(true)
 
   const login = async () => {
     await wait(1000)

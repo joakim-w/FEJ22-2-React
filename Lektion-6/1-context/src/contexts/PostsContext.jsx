@@ -1,10 +1,11 @@
-import { createContext, useState } from 'react'
+import { createContext, useState, useReducer } from 'react'
+import { postsReducer } from '../reducers/postsReducer';
 
 export const PostsContext = createContext();
 
 const PostsContextProvider = ({ children }) => {
 
-  const [posts, setPosts] = useState([
+  const [posts, dispatch] = useReducer(postsReducer, [
     {
       id: '123refdscxjk',
       title: 'post 1',
@@ -17,29 +18,43 @@ const PostsContextProvider = ({ children }) => {
     }
   ])
 
-  const deletePost = (id) => {
-    setPosts(state => {
-      return state.filter(post => post.id !== id)
-    })
-  }
+  // const [posts, setPosts] = useState([
+  //   {
+  //     id: '123refdscxjk',
+  //     title: 'post 1',
+  //     body: 'hjasd hjasd hjha sdjh asdjh asjdh ajshd jh asjdh ajhs djhas dsd'
+  //   },
+  //   {
+  //     id: '123refdssdfg',
+  //     title: 'post 2',
+  //     body: 'hjasd hjasd hjha sdjhsdgfg sgdsr fgdfgsg sfd dsd'
+  //   }
+  // ])
 
-  const addPost = (title, body) => {
-    const post = {
-      id: crypto.randomUUID(),
-      title,
-      body
-    }
+  // const deletePost = (id) => {
+  //   setPosts(state => {
+  //     return state.filter(post => post.id !== id)
+  //   })
+  // }
 
-    setPosts(state => {
-      return [post, ...state]
-    })
-  }
+  // const addPost = (title, body) => {
+  //   const post = {
+  //     id: crypto.randomUUID(),
+  //     title,
+  //     body
+  //   }
+
+  //   setPosts(state => {
+  //     return [post, ...state]
+  //   })
+  // }
 
 
   const value = {
     posts,
-    deletePost,
-    addPost
+    // deletePost,
+    // addPost
+    dispatch
   }
 
   return (

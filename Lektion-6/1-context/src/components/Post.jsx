@@ -1,14 +1,21 @@
 import React from 'react'
 import { usePostsContext } from '../hooks/usePostsContext'
 import { useThemeContext } from '../hooks/useThemeContext'
+import actiontypes from '../reducers/actiontypes'
 
 const Post = ({post}) => {
 
-  const { deletePost } = usePostsContext()
+  // const { deletePost } = usePostsContext()
+  const { dispatch } = usePostsContext()
   const { isDarkTheme, theme } = useThemeContext()
 
   const handleClick = () => {
-    deletePost(post.id)
+    // deletePost(post.id)
+    dispatch({
+      // type: 'DELETE_POST',
+      type: actiontypes().posts.deletePost,
+      payload: post.id
+    })
   }
 
   return (
