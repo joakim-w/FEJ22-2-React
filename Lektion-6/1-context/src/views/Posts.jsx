@@ -1,20 +1,14 @@
-import { useState } from 'react'
 import Post from '../components/Post'
+import { usePostsContext } from '../hooks/usePostsContext'
+
+// import { useContext } from 'react'
+// import { PostsContext } from '../contexts/PostsContext'
 
 const Posts = () => {
 
-  const [posts, setPosts] = useState([
-    {
-      id: '123refdscxjk',
-      title: 'post 1',
-      body: 'hjasd hjasd hjha sdjh asdjh asjdh ajshd jh asjdh ajhs djhas dsd'
-    },
-    {
-      id: '123refdssdfg',
-      title: 'post 2',
-      body: 'hjasd hjasd hjha sdjhsdgfg sgdsr fgdfgsg sfd dsd'
-    }
-  ])
+  // const { posts } = useContext(PostsContext)
+
+  const { posts } = usePostsContext()
 
   return (
     <div className='Posts'>
