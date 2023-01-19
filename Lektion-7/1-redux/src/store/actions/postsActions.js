@@ -4,13 +4,13 @@ export const getPosts = () => {
   return async (dispatch) => {
     try {
       dispatch(loading())
-      const res = await fetch('https://jsonplaceholder.typicode.com/postss')
+      const res = await fetch('https://jsonplaceholder.typicode.com/posts')
       if(!res.ok) {
         throw new Error(res.statusText)
       }
 
       const data = await res.json()
-
+      dispatch(getPostsSuccess(data))
 
     }
     catch(err) {

@@ -5,5 +5,5 @@ export const DECREMENT_QUANTITY = 'decrement-quantity'
 
 
 export const GET_POSTS = 'get-posts'
-export const GET_POSTS_SUCCESS = 'set-posts-success'
-export const GET_POSTS_ERROR = 'set-posts-error'
+export const GET_POSTS_SUCCESS = 'get-posts-success'
+export const GET_POSTS_ERROR = 'get-posts-error'

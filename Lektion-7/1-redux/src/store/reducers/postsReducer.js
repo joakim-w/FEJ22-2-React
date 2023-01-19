@@ -11,16 +11,26 @@ const postsReducer = (state = initState, action) => {
     case GET_POSTS:
       return {
         ...state,
-        loading: true
+        posts: [],
+        loading: true,
+        error: null
       }
 
     case GET_POSTS_ERROR:
       return {
         ...state,
+        posts: [],
         loading: false,
         error: 'could not fetch the posts'
       }
 
+    case GET_POSTS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        posts: action.payload
+      }
 
     default:
       return state
