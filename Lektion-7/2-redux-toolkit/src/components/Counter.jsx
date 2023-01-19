@@ -4,9 +4,10 @@ import { decrement, increment } from '../store/features/counterSlice'
 
 const Counter = () => {
 
-  const dispatch = useDispatch()
   const { count } = useSelector(state => state.counter)
-
+  
+  const dispatch = useDispatch()
+  
   return (
     <div>
       <h3>COUNTER</h3>
