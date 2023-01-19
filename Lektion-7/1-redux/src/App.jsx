@@ -2,7 +2,7 @@ import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
 import Root from './layouts/Root'
-import Counter from './Views/Counter'
+import Home from './Views/Home'
 
 const router = createBrowserRouter([
   {
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Counter />
+        element: <Home />
       }
     ]
   }
