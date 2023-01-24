@@ -8,7 +8,7 @@ const initState = {
 
 const postsReducer = (state = initState, action) => {
   switch(action.type) {
-    case GET_POSTS:
+    case 'posts/getAll':
       return {
         ...state,
         posts: [],

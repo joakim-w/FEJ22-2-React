@@ -6,6 +6,8 @@ const BASE_URL = 'https://jsonplaceholder.typicode.com/posts/'
 const getAllPosts = async () => {
   const res = await axios.get(BASE_URL)
   return res.data
+  // const res = await fetch(BASE_URL)
+  // return res.json()
 }
 
 const getPostById = async (postId) => {

@@ -24,7 +24,7 @@ export const getPosts = () => {
 
 const loading = () => {
   return {
-    type: GET_POSTS
+    type: 'posts/getAll'
   }
 }
 
